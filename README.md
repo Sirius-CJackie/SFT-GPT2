@@ -12,6 +12,7 @@
 | **Number of Timesteps** | 4368                     | 4368                     |
 
 # Setup
+Before training, please configure the following training dictionary:  
 config = {  
     "file_dir": "CitiBike_dataset/bike_pick/",  # Path to dataset (CitiBike_dataset or NYCTaxi_dataset)  
     "epochs": 300,                              # Number of training epochs  
