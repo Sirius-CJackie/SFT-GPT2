@@ -12,32 +12,17 @@
 | **Number of Timesteps** | 4368                     | 4368                     |
 
 # Setup
-Before training, please configure the following training dictio￾nary:
 config = {
-"file_dir": "CitiBike_dataset/bike_pick/",
-"epochs": 300,
-"num_nodes": 250,
-"lrate": 1e-3,
-"batch_size": 64,
-"input_dim": 3,
-"clip": 5.0,
-"es_patience": 100,
-"input_len": 12,
-"output_len": 12,
-"wdecay": 0.0001,
-"save": "./",
+    "file_dir": "CitiBike_dataset/bike_pick/",  # Path to dataset (CitiBike_dataset or NYCTaxi_dataset)
+    "epochs": 300,                              # Number of training epochs
+    "num_nodes": 250,                           # Number of spatial nodes (250 for CitiBike, 266 for NYCTaxi)
+    "lrate": 1e-3,                              # Learning rate
+    "batch_size": 64,                           # Batch size
+    "input_dim": 3,                             # Number of input features
+    "clip": 5.0,                                # Gradient clipping norm
+    "es_patience": 100,                         # Early stopping patience (epochs)
+    "input_len": 12,                            # Input sequence length
+    "output_len": 12,                           # Prediction sequence length
+    "wdecay": 0.0001,                           # Weight decay for regularization
+    "save": "./",                               # Output directory for saved files
 }
-
-• file_dir: set the path to the dataset folder (either CitiBike_dataset or NYCTaxi_dataset).
-• epochs: number of training epochs.
-• num_nodes: number of spatial IDs in the dataset (250 for CitiBike, 266 for NYCTaxi).
-• lrate: learning rate.
-• batch_size: batch size, default is 64.
-• input_dim: number of input features, default is 3.
-• clip: gradient clipping norm, default is 5.0.
-• es_patience: early stopping patience, training stops if no improvement is observed
-for 100 epochs.
-• input_len: input series length.
-• output_len: prediction series length.
-• wdecay: weight decay coefficient for regularization.
-• save: directory to save output files.
